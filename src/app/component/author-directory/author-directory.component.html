@@ -1,0 +1,18 @@
+<div class="author-directory-container">
+  <div class="center-container">
+    <h1>Discover</h1>
+  </div>
+    
+    <input type="text" placeholder="Search by author name" (input)="onSearchChange($event)" />
+  
+    <div class="author-list">
+      <div class="author" *ngFor="let author of filteredAuthors">
+        <img [src]="author?.content?.image" alt="{{ author.author }}" class="author-profile-picture author-image" />
+        <div class="author-info">
+          <h2>{{ author.author }}</h2>
+          <p>{{ author?.content?.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

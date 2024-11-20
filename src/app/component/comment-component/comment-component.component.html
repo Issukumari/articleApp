@@ -1,0 +1,57 @@
+ <div class="comment-section">
+  <h2>Comments</h2>
+
+  <div class="sort-options">
+    <label for="sortSelect">Sort by:</label>
+    <select id="sortSelect" (change)="onSortChange($event)" [value]="sortOption">
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </select>
+  </div>
+  
+  <div class="comment-list">
+    <div *ngIf="comments$ | async as comments; else loading">
+      <div *ngFor="let comment of comments" class="comment">
+        <div class="comment-header">
+          <strong>{{ comment.author }}</strong>
+          <span class="timestamp">{{ comment.timestamp | date: 'short' }}</span>
+        </div>
+        <p>{{ comment.content }}</p>
+  
+        <div class="reply-section">
+          <input #replyInput class="reply-input" placeholder="Type a reply..." />
+          <button (click)="addReply(comment, replyInput)">Reply</button>
+        </div>
+  
+        <div class="replies">
+          <ng-container *ngTemplateOutlet="renderReplies; context: { $implicit: comment.replies, parentComment: comment }"></ng-container>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #loading>
+      <p>Loading comments...</p>
+    </ng-template>
+  
+    <ng-template #renderReplies let-replies let-parentComment="parentComment">
+      <div *ngFor="let reply of replies" class="reply">
+        <div class="comment-header">
+          <strong>{{ reply.author }}</strong>
+          <span class="timestamp">{{ reply.timestamp | date: 'short' }}</span>
+        </div>
+        <p>{{ reply.content }}</p>
+        <div class="replies">
+          <ng-container *ngTemplateOutlet="renderReplies; context: { $implicit: reply.replies, parentComment: reply }"></ng-container>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="add-comment">
+    <input [(ngModel)]="newCommentContent" placeholder="Add a comment..." />
+    <button (click)="addComment()">Post</button>
+  </div>
+
+  <div *ngIf="error$ | async as error" class="error-message">
+    <p>Error: {{ error }}</p>
+  </div>
+</div> 

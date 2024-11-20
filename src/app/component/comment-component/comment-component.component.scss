@@ -1,0 +1,123 @@
+.comment-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sort-options {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .comment-list {
+    margin-top: 10px;
+  }
+  
+  .comment {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .timestamp {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .reply-section {
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reply-input {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .replies {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  
+  .reply {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .add-comment {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-comment input {
+    padding: 8px;
+    width: 80%;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-comment button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-comment button:hover {
+    background-color: #218838;
+  }
+  .sortComments{
+    margin-top: 10px;
+  }
+  

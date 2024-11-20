@@ -1,0 +1,38 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60%;
+    height: 350px;
+  }
+  
+  .carousel-image {
+    max-width: 60%;
+    max-height: 100%;
+    width: 350px;
+    height: 250px;
+    display: block;
+    margin: 20px;
+  }
+  .bi {
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .bi-chevron-compact-left {
+    left: 5px;
+  }
+  .bi-chevron-compact-right {
+    right: 5px;
+  }
+  .hearticon{
+    margin-top: -126px;
+    position: absolute;  }
+  .carousel-info{
+    margin-left: -201px;
+    margin-top: 312px;
+  }

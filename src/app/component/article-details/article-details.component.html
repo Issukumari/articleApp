@@ -1,0 +1,38 @@
+   <div class="article-details-container" *ngIf="(article$ | async) as article">
+    <h1>{{ article.title }}</h1>
+    <p><strong>Author:</strong> {{ article.author }}</p>
+    <p><strong>Published:</strong> {{ article.scheduledDate | date }}</p>
+  
+    <div class="article-content">
+      <p>{{ article?.content?.description ?? 'No description available' }}</p>
+    </div>
+    <div class="author-bio" *ngIf="author$ | async as author">
+      <h2>About the Author: {{ author?.author || 'No author data' }}</h2>
+      <img 
+        [src]="author?.content?.image || 'fallback-image.jpg'" 
+        alt="{{ author?.author || 'No image' }}" 
+        class="author-profile-picture author-image" 
+      />
+      <h3>More from {{ author.author }}</h3>
+      <h4>{{ author?.title }}</h4>
+
+      <p>{{ author?.content?.description || 'No bio available' }}</p>
+    </div>
+    <div class="related-articles" *ngIf="relatedArticles$ | async as relatedArticles">
+      <h2 *ngIf="relatedArticles.length > 0">Related Articles</h2>
+      
+      <div *ngIf="relatedArticles.length > 0">
+        <div class="article" *ngFor="let related of relatedArticles">
+          <img [src]="related?.content?.image" alt="{{ related.title }}" class="author-profile-picture" />
+          <h4>{{ related.title }}</h4>
+          <p>{{ related?.content?.description ?? 'No description available' }}</p>
+        </div>
+      </div>
+    
+      <div *ngIf="relatedArticles.length === 0" class="relatedarticles">
+        <p>No related articles available</p>
+      </div>
+    </div>
+    
+  </div>
+  

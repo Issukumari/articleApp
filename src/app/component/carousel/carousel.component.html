@@ -1,0 +1,16 @@
+<h1>Feature Article</h1>
+<div class="carousel-container">
+    <i class="bi bi-chevron-compact-left" (click)="previousImage()"></i>
+    <img [src]="images[currentIndex]" alt="Listing Image" class="carousel-image">
+    <i class="bi bi-chevron-compact-right" (click)="nextImage()"></i>
+    <div *ngIf="listings[currentIndex]?.isFavourite" class="favourate-icon">
+   <i class="bi bi-heart-fill hearticon">
+</i>
+  </div>
+      
+      <div class="carousel-info">
+        <button (click)="markAsFavorite(listings[currentIndex].id)" class="markAsFavourate">            
+          {{ listings[currentIndex].isFavourite ? 'Remove Favorite' : 'Mark as Favorite' }}
+        </button>
+      </div>
+  </div>

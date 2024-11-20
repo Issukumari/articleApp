@@ -15,15 +15,22 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "jest", "jasmine"],
+    "target": "ES2016", 
     "lib": [
-      "ES2022",
+      "ES2016",
       "dom"
     ]
   },
+  "include": ["**/*.spec.ts", "**/*.d.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "out-tsc"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

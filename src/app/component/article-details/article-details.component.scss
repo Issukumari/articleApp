@@ -1,0 +1,35 @@
+
+.article-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .article-content {
+    margin-top: 20px;
+  }
+  
+  .author-bio {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .author-profile-picture {
+    width: 50%;  
+    height: 270px;
+    object-fit: cover; 
+    padding: 5px;
+  }
+  
+  .other-articles, .related-articles {
+    margin-top: 20px;
+  }
+  
+  .article {
+    margin-bottom: 10px;
+  }
+ .relatedarticles{
+  padding: 20px;
+ }
+  
