@@ -65,6 +65,7 @@ export class CreatePostComponent implements OnInit{
       scheduledDate: this.publishDate,
       status: 'draft'
     };
+    console.log(draftData)
   }
 
   publishNow() {
